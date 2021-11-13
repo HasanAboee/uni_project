@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import Background from "../components/Layout/layout";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Background>
+      <Component {...pageProps} />
+    </Background>
+  );
 }
 
-export default MyApp
+export default MyApp;
