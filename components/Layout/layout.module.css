@@ -1,4 +1,3 @@
-
 .navigator {
   width: 100%;
   height: 60px;
@@ -23,7 +22,7 @@
 
 .logo_box img {
   width: 110px;
-  height:50px;
+  height: 50px;
 }
 
 .login_button_box button {
@@ -41,6 +40,9 @@
 
 .navigator ul > li {
   color: #000000;
+  padding: 5px 20px;
+  cursor: pointer;
+  transition: all ease 0.3s;
 }
 
 .navigator ul:hover > li {
@@ -49,4 +51,45 @@
 
 .navigator ul > li:hover {
   color: #000000;
+}
+.submenu {
+  visibility: none;
+}
+.submenu ul {
+  background-color: rgb(255, 255, 255);
+  min-width: 10px;
+  position: absolute;
+  top: 40px;
+  left: 710px;
+  display: none;
+  padding-left: 0;
+  border-radius: 5px;
+}
+.submenu ul li {
+  color: white;
+  width: 85px;
+}
+.submenu:hover ul {
+  display: block;
+}
+.wrapper{
+  min-height: 100%;
+  margin-bottom: -120px; /* Same as push height */
+  padding: 1px;
+}
+.footer{
+  border: 5px 0px 0px 0px;
+  border-color: #000000;
+  display: flex;
+    background-color: rgb(255, 255, 255);
+    color: rgb(15, 15, 15);
+    height: auto;
+    width: 100%;
+    
+}
+.footer ul{
+  list-style: none;
+}
+.push{
+  height:120px;
 }

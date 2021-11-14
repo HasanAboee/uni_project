@@ -2,7 +2,20 @@
     display: flex;
     justify-content: space-between;
 }
+.background img{
+    width:100%;
+    opacity: 50%;
+}
+.background{
+    position: absolute;
+    
+}
 .prof img{
 height:300px;
 width:500px;
+border-radius: 5px;
+}
+.prof{
+    position:absolute;
+    right:1000px;
 }
