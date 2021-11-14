@@ -1,6 +1,6 @@
 
 .navigator {
-  width: 100vw;
+  width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
@@ -23,6 +23,7 @@
 
 .logo_box img {
   width: 110px;
+  height:50px;
 }
 
 .login_button_box button {

@@ -1,10 +1,10 @@
 import styles from "./layout.module.css";
-function layout() {
+function layout(props) {
   return (
-    
+    <div>
       <nav className={styles.navigator}>
         <div className={styles.logo_box}>
-          <img alt="logo" src="/logo.png" />
+          <img alt="logo" src="/logo.jpg" />
         </div>
         <ul>
           <li>صفحه نخست</li>
@@ -16,7 +16,10 @@ function layout() {
         <div className={styles.login_button_box}>
           <button>ورود</button>
         </div>
+        
       </nav>
+      <div>{props.children}</div>
+      </div>
     
   );
 }
