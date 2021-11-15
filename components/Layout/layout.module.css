@@ -72,24 +72,38 @@
 .submenu:hover ul {
   display: block;
 }
-.wrapper{
+.wrapper {
   min-height: 100%;
-  margin-bottom: -120px; /* Same as push height */
+  margin-bottom: -120px;
   padding: 1px;
 }
-.footer{
+.footer {
   border: 5px 0px 0px 0px;
   border-color: #000000;
-  display: flex;
-    background-color: rgb(255, 255, 255);
-    color: rgb(15, 15, 15);
-    height: auto;
-    width: 100%;
-    
+  
+  background-color: rgb(255, 255, 255);
+  color: rgb(15, 15, 15);
+  height: auto;
+  width: 100%;
 }
-.footer ul{
+.footer ul {
   list-style: none;
 }
-.push{
-  height:120px;
+.push {
+  height: 120px;
+}
+.icons{
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  padding:20px 700px 0px 700px;
+  font-size:larger;
+}
+.icon:hover{
+  cursor: pointer;
+  color: red;
+}
+.contact{
+  text-align: center;
+  padding-top: 5px;
 }
