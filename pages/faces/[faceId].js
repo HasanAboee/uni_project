@@ -14,7 +14,7 @@ function DetailedFace() {
   return (
     <Fragment>
       <FaceSummary title={face.title} />
-      <FaceLogistics image={face.image} imageAlt={face.title}/>
+      <FaceLogistics image={face.image} face={face.face} imageAlt={face.title} date={face.birthday} knowledge={face.knowledge} />
       <FaceContent>
         <p>{face.description}</p>
       </FaceContent>
