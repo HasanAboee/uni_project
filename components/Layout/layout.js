@@ -1,4 +1,6 @@
 import styles from "./layout.module.css";
+import {useRouter} from 'next/router'
+import Link from "next/link";
 import React from "react";
 import { ImTelegram } from "react-icons/im";
 import {
@@ -6,7 +8,13 @@ import {
   AiOutlineInstagram,
   AiFillTwitterCircle,
 } from "react-icons/ai";
+import FaceSearch from "../Lasting_Figuers/search";
 function layout(props) {
+  const router = useRouter();
+  function findFaceHandler(name,category){
+    const fullPath = `/faces/${name}/${category}`;
+    router.push(fullPath);
+  }
   return (
     <div className={styles.wrapper}>
       <nav className={styles.navigator}>
@@ -14,7 +22,12 @@ function layout(props) {
           <img alt="logo" src="/logo.jpg" />
         </div>
         <ul>
-          <li>صفحه نخست</li>
+          <Link href="/">
+            <li>صفحه نخست</li>
+          </Link>
+          <Link href="/form">
+            <li>ثبت چهره جدید</li>
+          </Link>
           <li className={styles.submenu}>
             چهره ها
             <ul>
@@ -43,9 +56,8 @@ function layout(props) {
       <div>{props.children}</div>
       <div className={styles.push}></div>
       <div className={styles.footer}>
-      <div className={styles.contact}>راه ارتباطی با ما</div>
+        <div className={styles.contact}>راه ارتباطی با ما</div>
         <div className={styles.icons}>
-          
           <div className={styles.icon}>
             <ImTelegram />
           </div>
@@ -59,6 +71,7 @@ function layout(props) {
             <AiFillTwitterCircle />
           </div>
         </div>
+        <div><FaceSearch OnSearch={findFaceHandler}/></div>
       </div>
     </div>
   );

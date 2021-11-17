@@ -1,6 +1,10 @@
-function AllFaces(){
-    return(
-        <div>All Faces</div>
-    )
+import { Fragment } from "react";
+
+function AllFaces() {
+   return (
+    <Fragment>
+     
+    </Fragment>
+  );
 }
 export default AllFaces;
