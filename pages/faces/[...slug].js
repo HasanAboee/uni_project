@@ -9,7 +9,7 @@ function FilteredFace(props) {
   const [filteredName, setFilteredName] = useState("");
   const [filteredCategory, setFilteredCategory] = useState("");
   const [filteredFaces , setFilteredFaces] = useState([])
-
+ 
   useEffect(() => {
     if (router?.query?.slug) {
       setFilteredData(router.query.slug);
@@ -29,6 +29,7 @@ function FilteredFace(props) {
         figures={filteredFaces}
         title={filteredName}
         face={filteredCategory}
+       
       />
     </div>
   );

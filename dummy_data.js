@@ -70,6 +70,6 @@ export function getFacesById(id) {
 }
 export function getFilteredFaces(title = "", face = "") {
   return DUMMY_DATA.filter(
-    (el) => el.title.includes(title) || el.face.includes(face)
+    (el) => el.title.includes(title) && el.face.includes(face)
   );
 }
