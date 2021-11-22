@@ -42,6 +42,7 @@ const DUMMY_DATA = [
     id: "fig3",
     title: "محمدحسین ماندگار",
     image: "figure3.jpg",
+    face: "",
     description:
       "دکتر ماندگار از چهره های ماندگار مهارت در جراحی پیوند قلب را در سال‌های متمادی و در شهرهای مختلف دنیا به‌دست آورد.وی این دوره را ابتدا در سال۱۹۸۸ درلوزان، سپس در سال۱۹۹۰ در پاریس و بعد در سال ۱۹۹۱ در لندنو در نهایت در سال ۱۹۹۲ در وین گذراند",
     isFeatured: true,
@@ -52,6 +53,7 @@ const DUMMY_DATA = [
     birthday: "روز تولد: 1320/1/30",
     knowledge: "تحصیلات: حوزه علمیه قم",
     image: "figure1.jpg",
+    face: "",
     description:
       "اصغر صوفی: نه در حرف و شعار که در عمل به ملزومات میانه‌روی، عقلانیت و اعتدال پایبند است؛نامش با روزنامه «اطلاعات» پیوند خورده است و نام این روزنامه هم با نام وی. سیدمحمود دعایی،بهترین توصیف را درباره خود بیان می‌کند: «من دیرپاترین مسئولی هستم که در این نظام تمل شدم.",
     isFeatured: false,
@@ -66,6 +68,8 @@ export function getAllFigures() {
 export function getFacesById(id) {
   return DUMMY_DATA.find((face) => face.id === id);
 }
-export function getFilteredFaces() {
-  DUMMY_DATA.map((el) => ({ title: el.title, face: el.face }));
+export function getFilteredFaces(title = "", face = "") {
+  return DUMMY_DATA.filter(
+    (el) => el.title.includes(title) || el.face.includes(face)
+  );
 }

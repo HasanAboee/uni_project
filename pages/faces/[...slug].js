@@ -1,17 +1,36 @@
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { getFilteredFaces } from "../../dummy_data";
 import FigureList from "../../components/Lasting_Figuers/Figure_List";
+import { useEffect } from "react";
 function FilteredFace(props) {
   const router = useRouter();
-  const filteredData = router.query.slug;
+  const [filteredData, setFilteredData] = useState();
+  const [filteredName, setFilteredName] = useState("");
+  const [filteredCategory, setFilteredCategory] = useState("");
+  const [filteredFaces , setFilteredFaces] = useState([])
+
+  useEffect(() => {
+    if (router?.query?.slug) {
+      setFilteredData(router.query.slug);
+      setFilteredName(router.query.slug[0]);
+      setFilteredCategory(router.query.slug[1]);
+      setFilteredFaces(getFilteredFaces(router.query.slug[0] , router.query.slug[1]))
+    }
+  }, [router]);
+
   if (!filteredData) {
-    return <p className="center">Loading...</p>;
+    return <p className="center">لطفا صبر کنید...</p>;
   }
-  const filteredName = filteredData[0];
-  const filteredCategory = filteredData[1];
-  const filteredFaces = getFilteredFaces();
-  return <div>
-      <FigureList figures={filteredFaces}/>
-  </div>;
+
+  return (
+    <div>
+      <FigureList
+        figures={filteredFaces}
+        title={filteredName}
+        face={filteredCategory}
+      />
+    </div>
+  );
 }
 export default FilteredFace;
