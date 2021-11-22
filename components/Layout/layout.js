@@ -11,8 +11,8 @@ import {
 import FaceSearch from "../Lasting_Figuers/search";
 function layout(props) {
   const router = useRouter();
-  function findFaceHandler(name,category){
-    const fullPath = `/faces/${name}/${category}`;
+  function findFaceHandler(title,face){
+    const fullPath = `/faces/${title}/${face}`;
     router.push(fullPath);
   }
   return (

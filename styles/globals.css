@@ -24,3 +24,7 @@ button {
 body{
   direction: rtl;
 }
+.center{
+margin:auto;
+text-align: center;
+}

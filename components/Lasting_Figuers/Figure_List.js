@@ -8,6 +8,7 @@ function FigureList(props) {
           key={figure.id}
           id={figure.id}
           title={figure.title}
+          face={figure.face}
           image={figure.image}
           description={figure.description}
         />
