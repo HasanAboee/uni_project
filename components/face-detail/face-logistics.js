@@ -9,7 +9,7 @@ function FaceLogistics(props) {
   return (
     <section className={styles.logistics}>
       <div className={styles.image}>
-        <Image src={`/${image}`} alt={imageAlt} height={400} width={400} />
+        <Image src={`${image}`} alt={imageAlt} height={400} width={400} />
       </div>
       <ul className={styles.list}>
         <LogisticsItem >

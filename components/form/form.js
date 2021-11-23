@@ -17,12 +17,12 @@ const descriptionInputRef=useRef();
         const FigureData = {
             title: enteredName,
             image: enteredImage,
-            address: entereBirth,
-            talent:enteredTalent,
+            birthday: entereBirth,
+            face:enteredTalent,
             description: enteredDescription,
         };
        
-        props.onAddMeetup(FigureData);
+        props.onAddFace(FigureData);
     }
     return (
         <Card>

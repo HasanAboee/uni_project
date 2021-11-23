@@ -2,7 +2,7 @@ const DUMMY_DATA = [
   {
     id: "fig1",
     title: "سید علی ملک ‌حسینی",
-    image: "Malek_Hosseini.jpg",
+    image: "/Malek_Hosseini.jpg",
     face: "چهره های ماندگار: پزشکی و علوم تجربی",
     birthday: "روز تولد: 1310/5/16",
     description:
