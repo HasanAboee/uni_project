@@ -1,4 +1,5 @@
 import styles from "./layout.module.css";
+import { Report } from "../Lasting_Figuers/search";
 import {useRouter} from 'next/router'
 import Link from "next/link";
 import React from "react";
@@ -50,7 +51,7 @@ function layout(props) {
           <li>تماس با ما</li>
         </ul>
         <div className={styles.login_button_box}>
-          <button>ورود</button>
+         <Link href="/Login_form/login"><button>ورود</button></Link>
         </div>
       </nav>
       <div>{props.children}</div>
@@ -71,6 +72,7 @@ function layout(props) {
             <AiFillTwitterCircle />
           </div>
         </div>
+        <div><Report/></div>
         <div><FaceSearch OnSearch={findFaceHandler}/></div>
       </div>
     </div>
