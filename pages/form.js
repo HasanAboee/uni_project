@@ -6,7 +6,7 @@ function NewForm() {
   return (
     <section>
       <h1>اضافه کردن چهره جدید</h1>
-      <Form onAddFace={AddHandler} />
+      <Form  />
     </section>
   );
 }

@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: persian;
+  src: url("/fonts/persian/BNazanin.tft");
+}
 
 body {
 

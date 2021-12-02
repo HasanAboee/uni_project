@@ -1,11 +1,15 @@
 import Card from '../Lasting_Figuers/Card';
 import styles from './form.module.css'
-import {useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
+import { addDataToLocalStorage, readDataFromLocalStorage } from '../../dummy_data';
+
 function NewMeetupForm(props){
 const nameInputRef=useRef();
 const imageInputRef=useRef();
 const birthInputRef=useRef();
 const talentInputRef=useRef();
+const [dummy_data , setDummyData] = useState([])
+
 const descriptionInputRef=useRef();
     function SubmitHandler(e){
         e.preventDefault();
@@ -15,15 +19,20 @@ const descriptionInputRef=useRef();
         const enteredTalent = talentInputRef.current.value;
         const enteredDescription = descriptionInputRef.current.value;
         const FigureData = {
+            id:Date.now(),
             title: enteredName,
             image: enteredImage,
             birthday: entereBirth,
             face:enteredTalent,
             description: enteredDescription,
         };
-       
-        props.onAddFace(FigureData);
+       addDataToLocalStorage(FigureData , setDummyData)
     }
+
+
+    useEffect(() => {
+        readDataFromLocalStorage(setDummyData)
+    } , [])
     return (
         <Card>
             <form className={styles.form} onSubmit={SubmitHandler} >

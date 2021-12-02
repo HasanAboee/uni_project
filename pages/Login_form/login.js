@@ -1,6 +1,8 @@
 import { Fragment } from "react";
 import styles from "./login.module.css";
 function Login() {
+  
+  
   return (
     <div className={styles.login_page}>
     <div className={styles.form}>
@@ -10,10 +12,10 @@ function Login() {
           <p>لطفا نام کاربری و کلمه عبور خود را وارد نمایید.</p>
         </div>
       </div>
-      <form className={styles.login_form}>
+      <form className={styles.login_form} >
         <input type="text" placeholder="نام کاربری"/>
         <input type="password" placeholder="کلمه عبور"/>
-        <button>login</button>
+        <button>ورود</button>
         <p className={styles.message}>ثبت نام نکرده اید؟<a href="#">ایجاد حساب کاربری</a></p>
       </form>
     </div>

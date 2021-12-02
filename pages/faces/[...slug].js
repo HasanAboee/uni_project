@@ -8,8 +8,11 @@ function FilteredFace(props) {
   const [filteredData, setFilteredData] = useState();
   const [filteredName, setFilteredName] = useState("");
   const [filteredCategory, setFilteredCategory] = useState("");
-  const [filteredFaces , setFilteredFaces] = useState([])
- 
+  const [filteredFaces , setFilteredFaces] = useState([]);
+  
+console.log(router.query.slug)
+
+
   useEffect(() => {
     if (router?.query?.slug) {
       setFilteredData(router.query.slug);
@@ -18,6 +21,9 @@ function FilteredFace(props) {
       setFilteredFaces(getFilteredFaces(router.query.slug[0] , router.query.slug[1]))
     }
   }, [router]);
+
+  
+
 
   if (!filteredData) {
     return <p className="center">لطفا صبر کنید...</p>;

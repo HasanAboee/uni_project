@@ -16,6 +16,10 @@ function layout(props) {
     const fullPath = `/faces/${title}/${face}`;
     router.push(fullPath);
   }
+  function submitHandler(){
+    const fullPath = `/faces/${year}/${month}`
+    router.push(fullPath)
+  }
   return (
     <div className={styles.wrapper}>
       <nav className={styles.navigator}>
@@ -72,7 +76,7 @@ function layout(props) {
             <AiFillTwitterCircle />
           </div>
         </div>
-        <div><Report/></div>
+        <div><Report onSearch={submitHandler}/></div>
         <div><FaceSearch OnSearch={findFaceHandler}/></div>
       </div>
     </div>
