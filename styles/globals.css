@@ -1,19 +1,9 @@
-@font-face {
-  font-family: persian;
-  src: url("/fonts/persian/BNazanin.tft");
-}
+@import url("./fonts.css");
 
 body {
-
+  font-family: persian;
   margin: 0;
   background-color: #f5f5f5;
-  font-family:  sans-serif;
-}
-
-h1,
-h2,
-h3 {
-  font-family: sans-serif;
 }
 
 a {
@@ -21,13 +11,12 @@ a {
 }
 
 button {
-  font: inherit;
   cursor: pointer;
 }
-body{
+body {
   direction: rtl;
 }
-.center{
-margin:auto;
-text-align: center;
+.center {
+  margin: auto;
+  text-align: center;
 }

@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import FaceSearch, { Report } from "../components/Lasting_Figuers/search";
-
+import router from "next/router";
 import FigureItems from "../components/Lasting_Figuers/Figure_items";
 import { readDataFromLocalStorage } from "../dummy_data";
 function Search() {
@@ -9,6 +9,10 @@ function Search() {
   const [year, setYear] = useState();
   const [data, setData] = useState([]);
 
+  function findFaceHandler(title,face){
+    const fullPath = `/faces/${title}/${face}`;
+    router.push(fullPath);
+  }
    function onSubmit(e) {
     e.preventDefault();
 
@@ -40,7 +44,7 @@ function Search() {
         month={month}
         year={year}
       />
-      <FaceSearch />
+      <FaceSearch OnSearch={findFaceHandler}/>
       {data.map((figure) => (
         <FigureItems
           key={figure.id}

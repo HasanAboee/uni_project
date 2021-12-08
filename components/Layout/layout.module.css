@@ -8,7 +8,7 @@
   box-shadow: 20px 20px 60px #f5f5f5, -20px -20px 60px #ffffff;
 }
 
-.navigator ul {
+.navigatorul {
   display: flex;
   list-style: none;
   margin: 0;
@@ -40,9 +40,6 @@
 
 .navigator ul > li {
   color: #000000;
-  padding: 5px 20px;
-  cursor: pointer;
-  transition: all ease 0.3s;
 }
 
 .navigator ul:hover > li {
@@ -52,35 +49,35 @@
 .navigator ul > li:hover {
   color: #000000;
 }
-.submenu {
-  visibility: none;
-}
 .submenu ul {
-  background-color: rgb(255, 255, 255);
+  list-style: none;
+  background-color: whitesmoke;
   min-width: 10px;
+
   position: absolute;
-  top: 40px;
-  left: 750px;
+  top: 30px;
   display: none;
+  left: 200px;
   padding-left: 0;
   border-radius: 5px;
 }
 .submenu ul li {
   color: white;
   width: 85px;
+  gap: 0.025px;
 }
 .submenu:hover ul {
-  display: block;
+  display: flex;
 }
+
 .wrapper {
-  min-height: 100%;
   margin-bottom: -120px;
   padding: 1px;
 }
 .footer {
   border: 5px 0px 0px 0px;
   border-color: #000000;
-  
+
   background-color: rgb(255, 255, 255);
   color: rgb(15, 15, 15);
   height: auto;
@@ -92,15 +89,16 @@
 .push {
   height: 120px;
 }
-.icons{
+.icons {
   display: flex;
   justify-content: space-between;
-  padding:20px 700px 0px 700px;
-  font-size:larger;
- 
+  padding: 20px 700px 0px 700px;
+  font-size: larger;
 }
-.contact{
+.txt {
   text-align: center;
   padding-top: 5px;
 }
-
+.contact{
+  align-self: flex-start;
+}
