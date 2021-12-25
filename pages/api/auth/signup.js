@@ -1,3 +1,4 @@
+import { message } from "antd";
 import { hashPassword } from "../../../helper/auth";
 import { connectToDatabase } from "../../../helper/db";
 
@@ -27,7 +28,7 @@ async function handler(req, res) {
     client.close();
     return;
   }
-  const hashedPassword = hashPassword(password);
+  const hashedPassword = await hashPassword(password);
   const result = await db.collection("users").insertOne({
     email: email,
     password: hashedPassword,

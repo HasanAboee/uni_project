@@ -87,19 +87,18 @@ export function getFilteredDate(dateFilter) {
   return filteredFaces;
 }
 
-
-export function readDataFromLocalStorage (setData) {
-  const data = JSON.parse(localStorage.getItem('data'))
+export function readDataFromLocalStorage(setData) {
+  const data = JSON.parse(localStorage.getItem("data"));
   if (data) {
-    setData(data)
+    setData(data);
   }
 }
 
-export function addDataToLocalStorage (new_data_to_add , setData) {
-  const data = JSON.parse(localStorage.getItem('data'))
+export function addDataToLocalStorage(new_data_to_add, setData) {
+  const data = JSON.parse(localStorage.getItem("data"));
   if (data) {
-    const new_data = [...data , new_data_to_add]
-    setData(new_data)
-    localStorage.setItem('data' , JSON.stringify(new_data))
+    const new_data = [...data, new_data_to_add];
+    setData(new_data);
+    localStorage.setItem("data", JSON.stringify(new_data));
   }
 }

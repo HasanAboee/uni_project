@@ -1,4 +1,5 @@
 import styles from "./layout.module.css";
+import { useSession, signOut } from "next-auth/client";
 import { Report } from "../Lasting_Figuers/search";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -12,6 +13,11 @@ import {
 import FaceSearch from "../Lasting_Figuers/search";
 function layout(props) {
   const router = useRouter();
+  const [session, loading] = useSession();
+
+  function signoutHandler() {
+    signOut();
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -26,9 +32,12 @@ function layout(props) {
           <Link href="/search">
             <li>گزارش گیری</li>
           </Link>
-          <Link href="/form">
-            <li>ثبت چهره جدید</li>
-          </Link>
+          {session && (
+            <Link href="/form">
+              <li>ثبت چهره جدید</li>
+            </Link>
+          )}
+
           <li className={styles.submenu}>
             چهره ها
             <ul>
@@ -50,12 +59,20 @@ function layout(props) {
           <Link href="/about_us">
             <li>درباره‌ی ما</li>
           </Link>
-          <li>تماس با ما</li>
+          <Link href="/contact_us">
+            <li>تماس با ما</li>
+          </Link>
         </ul>
         <div className={styles.login_button_box}>
           <Link href="/Login_form/login">
             <button>ورود</button>
           </Link>
+          {session && (
+            <Link href={"/Login_form/change_password"}>
+              <button>تغییر کلمه عبور</button>
+            </Link>
+          )}
+          {session && <button onClick={signoutHandler}>خروج</button>}
         </div>
       </nav>
       <div>{props.children}</div>
