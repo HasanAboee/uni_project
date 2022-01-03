@@ -13,13 +13,18 @@ function FaceLogistics(props) {
       </div>
       <ul className={styles.list}>
         <LogisticsItem >
-          <time>{date}</time>
+         <span>تاریخ تولد</span>
+         <time>{date}</time>
         </LogisticsItem>
         <LogisticsItem>
+        <span>
+           نوع فعالیت
+         </span>
             {face}
             </LogisticsItem>
         <LogisticsItem>
-          {knowledge}
+        
+         {knowledge}
           </LogisticsItem>
  
         <LogisticsItem>

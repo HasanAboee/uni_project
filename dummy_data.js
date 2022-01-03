@@ -102,3 +102,9 @@ export function addDataToLocalStorage(new_data_to_add, setData) {
     localStorage.setItem("data", JSON.stringify(new_data));
   }
 }
+
+export function reWriteLocalStorage(new_data_to_add, setData) {
+  localStorage.removeItem('data')
+  setData(new_data_to_add);
+  localStorage.setItem("data", JSON.stringify(new_data_to_add));
+}

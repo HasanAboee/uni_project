@@ -1,7 +1,7 @@
 import Content from "../components/header/content";
 import axios from "axios";
 import FigureList from "../components/Lasting_Figuers/Figure_List";
-import { readDataFromLocalStorage } from "../dummy_data";
+import { readDataFromLocalStorage, reWriteLocalStorage } from "../dummy_data";
 import { useEffect, useState } from "react";
 function HomePage() {
   const [data, setData] = useState([]);
@@ -17,10 +17,15 @@ function HomePage() {
         url: "http://localhost:4000/celebrities",
       });
       setData(res.data);
-      console.log(res.data)
+      reWriteLocalStorage(res.data , setData)
     } catch (error) {
+      if (error?.response?.data){
+        console.log(error.response.data);
+      } else {
+        console.log(error)
+      }
       setError(true);
-      console.log(error.response.data);
+     
     } finally {
       setLoading(false);
     }

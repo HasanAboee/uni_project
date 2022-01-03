@@ -47,8 +47,8 @@ function Search() {
       <FaceSearch OnSearch={findFaceHandler}/>
       {data.map((figure) => (
         <FigureItems
-          key={figure.id}
-          id={figure.id}
+          key={figure._id}
+          id={figure._id}
           title={figure.title}
           face={figure.face}
           image={figure.image}
