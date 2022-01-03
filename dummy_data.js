@@ -72,8 +72,9 @@ export function getFacesById(id) {
   return DUMMY_DATA.find((face) => face.id === id);
 }
 export function getFilteredFaces(title = "", face = "") {
-  return DUMMY_DATA.filter(
-    (el) => el.title.includes(title) && el.face.includes(face)
+  const data = JSON.parse(localStorage.getItem("data"));
+  return data.filter(
+    (el) => el.title.includes(title) || el.face.includes(face)
   );
 }
 export function getFilteredDate(dateFilter) {

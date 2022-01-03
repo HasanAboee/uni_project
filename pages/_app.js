@@ -7,10 +7,10 @@ function MyApp({ Component, pageProps }) {
 
   //when you want to revalidate data in local storage
 
-  useEffect(() => {
-    localStorage.removeItem('data')
-     localStorage.setItem('data' , JSON.stringify(DUMMY_DATA))
-  } , [])
+  // useEffect(() => {
+  //   localStorage.removeItem('data')
+  //    localStorage.setItem('data' , JSON.stringify(DUMMY_DATA))
+  // } , [])
 
   
 
