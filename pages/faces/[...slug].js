@@ -9,8 +9,7 @@ function FilteredFace(props) {
   const [filteredName, setFilteredName] = useState("");
   const [filteredCategory, setFilteredCategory] = useState("");
   const [filteredFaces , setFilteredFaces] = useState([]);
-  
-console.log(router.query.slug)
+
 
 
   useEffect(() => {

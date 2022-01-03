@@ -4,7 +4,7 @@ import FigureList from "../components/Lasting_Figuers/Figure_List";
 import { readDataFromLocalStorage } from "../dummy_data";
 import { useEffect, useState } from "react";
 function HomePage() {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -32,7 +32,7 @@ function HomePage() {
   return (
     <section>
       <Content />
-   {/* <FigureList figures={data}/>  */}
+   <FigureList figures={data}/> 
     </section>
   );
 }

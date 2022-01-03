@@ -64,9 +64,12 @@ function layout(props) {
           </Link>
         </ul>
         <div className={styles.login_button_box}>
-          <Link href="/Login_form/login">
-            <button>ورود</button>
-          </Link>
+          {!session && !loading && (
+            <Link href="/Login_form/login">
+              <button>ورود</button>
+            </Link>
+          )}
+
           {session && (
             <Link href={"/Login_form/change_password"}>
               <button>تغییر کلمه عبور</button>

@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 import { verifyPassword } from "../../../helper/auth";
 import { connectToDatabase } from "../../../helper/db";
+
 export default NextAuth({
   session: {
     jwt: true,
@@ -19,6 +20,7 @@ export default NextAuth({
 
         if (!user) {
           client.close();
+
           throw new Error("حساب با این ایمیل پیدا نشد");
         }
         const isValid = await verifyPassword(

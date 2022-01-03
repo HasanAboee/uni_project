@@ -5,8 +5,8 @@ function FigureList(props) {
     <ul className={styles.list}>
       {props.figures.map((figure) => (
         <FigureItems
-          key={figure.id}
-          id={figure.id}
+          key={figure._id}
+          id={figure._id}
           title={figure.title}
           face={figure.face}
           image={figure.image}

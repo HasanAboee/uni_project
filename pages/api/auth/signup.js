@@ -1,13 +1,12 @@
-import { message } from "antd";
 import { hashPassword } from "../../../helper/auth";
 import { connectToDatabase } from "../../../helper/db";
-
 async function handler(req, res) {
   if (req.method !== "POST") {
     return;
   }
   const data = req.body;
   const { email, password } = data;
+
   if (
     !email ||
     !email.includes("@") ||
@@ -24,6 +23,7 @@ async function handler(req, res) {
   const db = client.db();
   const existingUSer = await db.collection("users").findOne({ email: email });
   if (existingUSer) {
+    
     res.status(422).json({ message: "قبلا با این ایمیل حساب ایجاد شده است" });
     client.close();
     return;
@@ -33,6 +33,7 @@ async function handler(req, res) {
     email: email,
     password: hashedPassword,
   });
+ 
   res.status(201).json({ message: "حساب ایجاد شد" });
   client.close();
 }

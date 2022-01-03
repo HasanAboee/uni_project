@@ -1,12 +1,16 @@
 import styles from "./password_form.module.css";
 import { useRef } from "react";
-function PasswordForm() {
+function PasswordForm(props) {
   const inputOldPassword = useRef();
   const inputNewPassword = useRef();
   async function SubmitHandler(event) {
     event.preventDefault();
-    const selectedEmail = inputOldPassword.current.value;
-    const selectedPassword = inputNewPassword.current.value;
+    const selectedOldPassword = inputOldPassword.current.value;
+    const selectedNewPassword = inputNewPassword.current.value;
+    props.onChangePassword({
+      oldPassword: selectedOldPassword,
+      newPassword: selectedNewPassword,
+    });
   }
   return (
     <section className={styles.auth}>
@@ -14,11 +18,21 @@ function PasswordForm() {
       <form onSubmit={SubmitHandler}>
         <div className={styles.control}>
           <label htmlFor="password">کلمه عبور قدیمی</label>
-          <input type="password" id="password" required ref={inputOldPassword} />
+          <input
+            type="password"
+            id="oldPassword"
+            required
+            ref={inputOldPassword}
+          />
         </div>
         <div className={styles.control}>
           <label htmlFor="password"> کلمه عبور جدید</label>
-          <input type="password" id="password" required ref={inputNewPassword} />
+          <input
+            type="password"
+            id="newPassword"
+            required
+            ref={inputNewPassword}
+          />
         </div>
         <div className={styles.actions}>
           <button>اعمال</button>
